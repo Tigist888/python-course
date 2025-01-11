@@ -1,4 +1,6 @@
 # Homework Lesson 2 - Numbers - Homework
+#from lesson_4.homework import original_price
+#from lesson_4.homework import original_price
 
 # READ CAREFULLY THE EXERCISE DESCRIPTION AND SOLVE IT RIGHT AFTER IT
 
@@ -22,18 +24,22 @@ print(total_cost)
 
 average_speed = 60
 hours_available = 4
-total_distance = ??? # calculate here
-print(???)  # print the result
+total_distance = average_speed * hours_available # calculate here
+print(total_distance)
+
+
+
+# print the result
 
 # ---------------------------------------------------------------------
 # Exercise 2 - Pizza Slices
 # A pizza is cut into 8 equal slices. Calculate and print how many
 # slices each person will get if there are 4 people sharing the pizza.
 
-pizza_slices = ???
-people = ???
-slices_per_person = ???
-print(???)
+pizza_slices = 8
+people = 4
+slices_per_person = pizza_slices/people
+print(slices_per_person)
 
 # ---------------------------------------------------------------------
 # Exercise 3 - Shopping Discount
@@ -41,11 +47,19 @@ print(???)
 # offering a 20% discount on the shoes.
 # Create two variables: original_price and discount_percentage and
 # assign the given values.
-# Create final_price to calculate the price Lisa has to pay and
-# print the result.
-# The formula to count the discounted price:
-# multiply the original price by the discount percentage and divide by 100.
+total_cost_price =80
+dis_count_percentage=20
 
+# Create final_price to calculate the price Lisa has to pay and
+final_price= (total_cost_price * dis_count_percentage)/100
+
+# print the result.
+print(final_price)
+
+# The formula to count the discounted price:
+discount_price= total_cost_price - final_price
+# multiply the original price by the discount percentage and divide by 100.
+print(discount_price)
 
 # ---------------------------------------------------------------------
 # Exercise 4 - Temperature Conversion
@@ -55,6 +69,9 @@ print(???)
 # To convert Celsis to Fahrenheit you need to multiply
 # the temperature in Celsius by 9/5 and add 32 to the result
 
+celsis=25
+fahrenheit=( 5/9) * celsis +32
+print (fahrenheit)
 
 # ---------------------------------------------------------------------
 # Exercise 5 - Gardening
@@ -63,6 +80,13 @@ print(???)
 # and print the area of the flowerbed.
 # To calculate the area of a circle, multiply π (~3.141) with the square of
 # the circle's radius.
+
+radius=3.5
+pi=3.141
+area_circular_flowerbed=pi * radius ** 2
+print(area_circular_flowerbed)
+
+
 
 
 # ---------------------------------------------------------------------
@@ -74,6 +98,10 @@ print(???)
 # temperature for display.
 # As an example, if the temperature is 24.8ºC, you need to print 24.
 
+temperature=24.8
+int(temperature)
+print(temperature)
+
 
 # ---------------------------------------------------------------------
 # Exercise 7 - Baking Cookies
@@ -81,14 +109,19 @@ print(???)
 # want to distribute them evenly into 5 cookies. Calculate and
 # print the number of chocolate chips in each cookie and the
 # remaining chips.
+chocolate_chips=17
+cookies=5
+chips_per_cookie=chocolate_chips // cookies
+print(chips_per_cookie)
 
-
+remaining_chips=chocolate_chips % cookies
+print(remaining_chips)
 # ---------------------------------------------------------------------
 # Exercise 8 - Fix the Code - Event total earnings
 # FOR THIS EXERCISE YOU WILL HAVE AN EXISTING CODE THAT IS
 # NOT WORKING CORRECTLY. YOUR TASK IS TO LOOK AT THE CODE
 # AND FIX THE PROBLEM SO IT WORKS AS EXPECTED.
-#
+
 # Tip: Copy the code and try to run it alone. See the results
 # and try to figure out why it is not working.
 #
@@ -99,11 +132,11 @@ print(???)
 #
 # For the values provided we are expecting a total earning of 750000,
 # however the code is not working correctly. Can you fix it?
-1st_event_participants = 250
-2nd_event_participants = 500
-ticket_$ = 1000
+first_event_participants = 250
+second_event_participants = 500
+ticket_price= 1000
 
-total_earnings = (1st_event_total + 2nd_event_total) * ticket_$
+total_earnings = (first_event_participants + second_event_participants ) * ticket_price
 print(total_earnings)
 
 
@@ -130,7 +163,7 @@ student_2_age = 17
 student_3_age = 13
 
 students_age_mean = student_1_age + student_2_age + student_3_age / 3
-print(students_mean_age)
+print(students_age_mean)
 
 # ---------------------------------------------------------------------
 # Challenge (OPTIONAL!): Separating Digits of a Number
@@ -153,15 +186,23 @@ number = 1597
 
 digit_1 = number % 10
 number = number // 10
-
 # print(digit_1) # will print 7
 # print(number)  # will print 159
-
+digit_2 = number % 10
+number=number//10
 # If you repeat this operation with the second, the third and
 # the fourth digits, you will be able to get all the digits.
 # Your code here
 
-# Print the result for all four digits
+digit_3= number % 10
+number=number//10
+
+#print(digit_3)
+digit_4= number % 10
+
+
+
+
 print(digit_1)
 print(digit_2)
 print(digit_3)
