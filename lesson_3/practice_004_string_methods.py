@@ -15,6 +15,8 @@ letter = input("Enter the letter to count: ")
 # Enter a sentence: I love cats and dogs, but cats are my favorite.
 # Enter the word to replace: cats
 # Enter the letter to count: o
+print(sentence.replace( new_word,"REPLACED"))
+
 
 # Expected output:
 # I love REPLACED and dogs, but REPLACED are my favorite.

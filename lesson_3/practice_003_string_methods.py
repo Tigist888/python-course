@@ -5,6 +5,10 @@
 
 # Given the user's input:
 text = input("Enter the text to be formatted: ")
+print(text.upper())
+print(text.lower())
+print(text.title())
+print(len(text))
 
 # Format this "text" variable so you can show the variable in:
 # - uppercase
@@ -21,3 +25,4 @@ text = input("Enter the text to be formatted: ")
 # Lowercase: hello world
 # Title: Hello World
 # Lenght: 11
+

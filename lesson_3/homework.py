@@ -9,8 +9,10 @@
 #
 # Example Input: "Alice"
 # Example Output: "Hello, Alice!"
+
 name = input("Enter yor name: ")
-print(f"????")
+print(f"Hello, {name}!")
+
 
 # ---------------------------------------------------------------------
 # Exercise 2: Greeting with User's Favorite Activity
@@ -23,6 +25,11 @@ print(f"????")
 # Name: Emily
 # Favorite Activity: hiking
 # Example Output: "Hello, Emily! Enjoy hiking!"
+
+username=input("Enter your name:  ")
+activity=input("Enter your activity:  ")
+name=username
+print("Hello, {name}! enjoy {activity}!".format(name=name, activity=activity))
 
 
 # ---------------------------------------------------------------------
@@ -38,6 +45,9 @@ print(f"????")
 # Name: Emily
 # Example Output: "Welcome, Emily! Your name in uppercase is: EMILY!"
 
+name=input("Enter your name: ")
+upper_name=name.upper()
+print("welcome, {0}! your name in uppercase: {1}".format(name, upper_name))
 
 # ---------------------------------------------------------------------
 # Exercise 4: User Profile Creation
@@ -49,7 +59,14 @@ print(f"????")
 # First name: john
 # Last name: smith
 # Age: 28
-#
+
+first_name=input("first name:  ").title()
+last_name=input("last name:  ").title()
+age=input("age:  ")
+
+profile_summer='name:{0} {1}\n age:{2}'.format(first_name, last_name, age)
+
+
 # Example Output:
 # Name: John Smith
 # Age: 28
@@ -65,6 +82,10 @@ print(f"????")
 # an f-string. This character count will help users ensure their
 # messages fit within the allowed limit.
 
+message=input("enter your message: ")
+char_count=len(message)
+print(f"the number of characters is :{char_count} in {message}")
+
 
 # ---------------------------------------------------------------------
 # Exercise 6: Text Transformation Game
@@ -75,7 +96,14 @@ print(f"????")
 # Example Input: "Hello, world!"
 # Example Output: "H*ll*, w*rld!"
 sentence = input("Enter a sentence: ")
-transformed_sentence = sentence.replace('a', '*')
+transformed_sentence = (sentence
+                        .replace('a', '*').replace('e', '*')
+                        .replace('i', '*').replace('o', '*')
+                        .replace('u', '*').replace('A', '*')
+                        .replace('E', '*').replace('I', '*')
+                        .replace('O', '*').replace('U', '*'))
+
+print(transformed_sentence)
 
 
 # ------------------------------# ---------------------------------------------------------------------
@@ -90,6 +118,9 @@ transformed_sentence = sentence.replace('a', '*')
 # Name: Lucy Smith
 # Age: 28
 
+full_name=data[0:11:1].title()
+age=data[11::]
+print(f"name: {full_name}\nage: {age}")
 
 # ---------------------------------------------------------------------
 # Exercise 8: Miles to Kilometers Conversion
@@ -105,6 +136,8 @@ transformed_sentence = sentence.replace('a', '*')
 # Input: float("1.23")
 # Output: 1.23
 miles = float(input("Enter distance in miles: "))
+distance_km =miles * 1.609
+print(f"{miles} miles is approximately {distance_km} kilometers.")
 
 
 # ---------------------------------------------------------------------
@@ -119,11 +152,29 @@ miles = float(input("Enter distance in miles: "))
 # to stay consistent and reach their fitness goals. Display the
 # motivational message to the user.
 
+cardio=input("Enter number of min spent in cardio: ")
+strength=input("Enter number of min spent in strength: ")
+yoga=input("Enter number of min spent in yoga : ")
+
+cardio=int(cardio)
+strength=int(strength)
+yoga=int(yoga)
+total_time=cardio+strength+yoga
+print( total_time)
+
+print(f"good job! the total workout time is {total_time},keep it up!")
+
+
+
 
 # ---------------------------------------------------------------------
 # Challenge 1 (OPTIONAL!): Reverse the negative integer -324 and keep
 # the negative symbol. Expected output: -423
 input_number = -324
+input_number_str=str(abs(input_number))
+Reversed=input_number_str[::-1]
+print(f"-{Reversed} ")
+
 
 # Convert the integer to a string to handle the negative symbol separately
 num_str = str(input_number)

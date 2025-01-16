@@ -4,3 +4,6 @@
 
 # For example, if the user enters "John",
 # the program should output "Your name is John."
+
+input_name=input("what is your name ?")
+print(f"your name is {input_name} ")
