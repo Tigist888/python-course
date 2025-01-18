@@ -1,6 +1,7 @@
 # Homework Lesson 2 - Numbers - Homework
 #from lesson_4.homework import original_price
 #from lesson_4.homework import original_price
+from lesson_3.homework import rounded_speed
 
 # READ CAREFULLY THE EXERCISE DESCRIPTION AND SOLVE IT RIGHT AFTER IT
 
@@ -47,19 +48,19 @@ print(slices_per_person)
 # offering a 20% discount on the shoes.
 # Create two variables: original_price and discount_percentage and
 # assign the given values.
-total_cost_price =80
-dis_count_percentage=20
+original_price = 80
+discount_percentage = 20
 
 # Create final_price to calculate the price Lisa has to pay and
-final_price= (total_cost_price * dis_count_percentage)/100
+discount_amount = (original_price * discount_percentage) / 100
 
 # print the result.
-print(final_price)
+print(discount_amount)
 
 # The formula to count the discounted price:
-discount_price= total_cost_price - final_price
+final_price = original_price - discount_amount
 # multiply the original price by the discount percentage and divide by 100.
-print(discount_price)
+print(final_price)
 
 # ---------------------------------------------------------------------
 # Exercise 4 - Temperature Conversion
@@ -69,10 +70,9 @@ print(discount_price)
 # To convert Celsis to Fahrenheit you need to multiply
 # the temperature in Celsius by 9/5 and add 32 to the result
 
-celsis=25
-fahrenheit=( 5/9) * celsis +32
-print (fahrenheit)
-
+temperature_celsius = 25
+temperature_fahrenheit = (temperature_celsius * 9/5) + 32
+print(f"Temperature in Fahrenheit: {temperature_fahrenheit}°F")
 # ---------------------------------------------------------------------
 # Exercise 5 - Gardening
 # You're planning a garden and need to calculate the area of
@@ -85,6 +85,7 @@ radius=3.5
 pi=3.141
 area_circular_flowerbed=pi * radius ** 2
 print(area_circular_flowerbed)
+print(f"Area of the circular flowerbed: {area_circular_flowerbed} square units")
 
 
 
@@ -98,9 +99,9 @@ print(area_circular_flowerbed)
 # temperature for display.
 # As an example, if the temperature is 24.8ºC, you need to print 24.
 
-temperature=24.8
-int(temperature)
-print(temperature)
+current_temprature  = 24.8
+whole_temprature=int(current_temprature)
+print(whole_temprature)
 
 
 # ---------------------------------------------------------------------
@@ -201,9 +202,8 @@ number=number//10
 digit_4= number % 10
 
 
-
-
 print(digit_1)
 print(digit_2)
 print(digit_3)
 print(digit_4)
+
