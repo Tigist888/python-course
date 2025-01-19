@@ -10,3 +10,9 @@ income = int(input('Enter your monthly income: '))
 # If the person is neither qualified for the first nor the second discount, print 'Sorry, you are not eligible for any discount.'
 
 # Remember to use the and, or operators to combine conditions as needed.
+if age>=18 and income<=1000:
+    print('you qualify for the discount!')
+if age<18 or income==0:
+    print('you got a special discount!')
+else:
+    print('Sorry,you are not eligible for any discount.')

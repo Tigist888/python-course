@@ -2,6 +2,16 @@
 # Follow these steps:
 
 # Get the user input as an integer of the student's score.
+student_score=int(input("Enter your score: "))
+if student_score>0:
+    if student_score>90:
+       print("Excellent!")
+    elif 70< student_score<90:
+       print("inclusive")
+    elif student_score<70:
+       print("keep working hard!")
+else:
+       print("No test score available")
 
 # Use a primary if statement to check if the score is higher than 0.
 # Inside this if statement, use nested conditionals to determine the feedback message based on these conditions:
