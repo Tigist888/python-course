@@ -4,14 +4,14 @@
 # - A list with the temperatures the last three days
 # - Your favorite animal
 
-my_list = ???
-my_list.a???
-my_list.a???
-my_list.a???
-my_list.a???
+my_list=[]
+my_list.append("Nashville")
+my_list.append("Tn")
+my_list.append("45,50,60")
+my_list.append("dog")
 
 # Then, remove the State, without using the indexes.
-my_list.r???
+my_list.remove("Tn")
 
 # Bonus: Remove the last element, using a negative index.
-??? my_list[???]
+del my_list[-1]

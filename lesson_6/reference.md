@@ -29,11 +29,11 @@ This section mentions the `pop()` method, which also removes an element from the
 ```python
 # From anywhere, without returning a value
 del my_list[0] # Removes the first element (index 0).
-del my_list[2] # Removes index 2 (meaning the THIRD element).
+del my_list[2] # Removes index 2 (meaning the THIRD element
 
 # From anywhere, returning a value
 some_element = my_list.pop()  # Removes the last element, and returns its value.
-some_element = my_list.pop(2) # Removes element at index 2, and returns its value.
+some_element = my_list.pop(2) # Removes element at index 2, and returns its value.).
 
 # Negative indexes are okay to use also, to delete or pop elements from the end.
 del my_list[-1]  # Removes the last element.

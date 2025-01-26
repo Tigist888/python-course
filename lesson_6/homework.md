@@ -16,19 +16,17 @@ the second sub-element is their age.
 ```python
 # List 1:
 list_1 = []
-list_1.a???('Friend1')
-list_1.???('Friend2')
-list_1.???('Friend3')
+list_1.append('Tite')
+list_1.append('Roshnie')
+list_1.append('Mimi')
 
 # List 2:
-list_2 = [???, ???, ???]
+list_2 = ['Tite','Roshni','Mimi']
 
 # List 3:
-list_3 = [
-    ???,
-    ???,
-    ???,
-]
+list_3 = [["Tite",35],["Roshni",40],["Mimi",39]]
+
+
 ```
 
 ### Retrieve elements from a List
@@ -40,10 +38,10 @@ Create print statements to retrieve the following elements from the previous lis
 
 ```python
 # Name of second friend
-second_friend_name = list_2[???]
+second_friend_name = list_2[1]
 
 # Age of the last friend of the list
-last_friend_age = list_3[???][???]
+last_friend_age = list_3[2][1]
 ```
 
 ### Remove elements from a List
@@ -55,10 +53,10 @@ cities = ["Houston", "Dallas", "Austin"]
 fruits = ["apple", "banana", "orange"]
 
 # Remove Austin from cities without using its index
-cities.remove(???)
+cities.remove("Austin")
 
 # Remove the last element from fruits using negative indexes
-??? fruits[???]
+del fruits[-1]
 ```
 
 ### Verify if an element exists in a list
@@ -71,7 +69,7 @@ pantry = ["ham", "bread", "cheese"]
 
 # Write code that prints YES if the list contains "cheese".
 
-if ??? in ???:
+if "cheese" in pantry:
     print('YES')
 ```
 ### Sorting and Reversing
@@ -82,17 +80,17 @@ Given the provided list, write code that sorts and reverses it, as required.
 numbers = [6, 34, 17, 9, 2, 11, 57, 9, 32]
 
 # Write code that sorts the list in ascending order without disturbing the original.
-sorted_numbers = ???(numbers)
+sorted_numbers = list(sorted(numbers))
 
 # Write code that reverses (flips) the list without disturbing the original.
 # Remember that in this case, casting is required.
-reversed_numbers = ???(???(numbers))
+reversed_numbers = list(reversed(numbers))
 
 # Write code that sorts the list in place, modifying the original.
-numbers.s???()
+numbers.sort()
 
 # Write code that reverses (flips) the list in place, modifying the original.
-numbers.r???()
+numbers.reverse()
 ```
 
 ### Stitching and Slicing
@@ -112,10 +110,10 @@ work_days = ['mon', 'tue',  'wed', 'thu', 'fri']
 rest_days = ['sat', 'sun']
 
 # Concatenate work_days and rest_rays
-full_week = ???
+full_week = work_days + rest_days 
 
 # Slice with the work days
-print(full_week[???])
+print(full_week[ :5])
 ```
 
 ### Aggregators and Helpers
@@ -132,19 +130,19 @@ Given a list of numbers, use helpers and aggregators to answer the questions:
 numbers = [6, 34, 17, 9, 2, 11, 57, 9, 32]
 
 # Lowest number
-print(???(numbers))
+print(min(numbers))
 
 # Highest number
-print(???(numbers))
+print(max(numbers))
 
 # Sum of everything
-print(???(numbers))
+print(sum(numbers))
 
 # Count number 9s
-print(numbers.???(???))
+print(numbers.count(9))
 
 # Total number of elements
-print(???(numbers))
+print(len(numbers))
 ```
 
 ## Exercises 🏋🏻
@@ -179,12 +177,12 @@ age = input("Age: ")
 city = input("City: ")
 
 # Add user input to the list
-user_data.???(name)
-user_data.???(age)
-user_data.???(city)
+user_data.append(name)
+user_data.append(age)
+user_data.append(city)
 
 # Declare your template. Use list elements as values.
-biography = f"???"
+biography = f"my name is {name} I am {age} I was born {city}."
 
 # Show the user's biography
 print(biography)
@@ -205,28 +203,30 @@ numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
 faces = ['J', 'Q', 'K']
 
 # Concatenate them first.
-card_deck = ???
+card_deck = numbers + faces 
 
 # Print out the numbers 1 to 6.
-print(card_deck[???])
+print(card_deck[ :6])
 
 # Print out the last 3. Do it using POSITIVE indexes.
-print(card_deck[???])
+print(card_deck[ 10:13])
 
 # Print out the last 3 (same as before), but using NEGATIVE indexes.
-print(card_deck[???])
+print(card_deck[-3:])
 
 # Print out everything EXCEPT the first and last.
-print(card_deck[???])
+print(card_deck[1:12])
 
 # What would you use so the printout includes the following:
 # Hint: It's every third card of the full deck.
 # ['1', '4', '7', '10', 'K']
-print(card_deck[???])
+print(card_deck[::3])
 
 # Print out the EVEN numbers. No faces.
-print(???)
-```
+even_numers=[n for n in numbers if int(n) % 2==0]
+print(even_numers)
+
+``` 
 
 ### The Steps Tracker 👟
 
@@ -244,31 +244,31 @@ Once you have all the steps counts, answer the following questions:
 - What was the most number of steps you took on a day? 
 
 ```python
-monday = input('Steps for Monday: ')
-tuesday = input('Steps for Tuesday: ')
-wednesday = input('Steps for Wednesday: ')
-thursday = input('Steps for Thursday: ')
-friday = input('Steps for Friday: ')
-saturday = input('Steps for Saturday: ')
-sunday = input('Steps for Sunday: ')
+monday = int(input('Steps for Monday: '))
+tuesday = int(input('Steps for Tuesday: '))
+wednesday = int(input('Steps for Wednesday: '))
+thursday = int(input('Steps for Thursday: '))
+friday = int(input('Steps for Friday: '))
+saturday = int(input('Steps for Saturday: '))
+sunday = int(input('Steps for Sunday: '))
 
-steps = [???]
+steps = [monday + tuesday + wednesday + thursday + friday  + saturday + sunday ] 
 
 # Steps on Wednesday
-print(steps[???])
+print(steps[ :3])
 
 # Steps on the work days
-work_days_steps = steps[???]
-print(???(work_days_steps))
+work_days_steps = steps[ : 5]
+print(sum(work_days_steps))
 
 # Steps over the whole week
-print(???(steps))
+print(sum(steps))
 
 # Least number of steps
-print(???(steps))
+print(min(steps))
 
 # Highest number of steps
-print(???(steps))
+print(max(steps))
 ```
 
 ### Bonus Round: The Speech Reverser and Counter 🎤
@@ -294,15 +294,15 @@ Now, armed with `split()` write a program that does the following:
 
 ```python
 # Get input from the user
-user_input = ???('Give me a phrase')
+user_input =input('Give me a phrase')
 
 # Split user input into words
-words = user_input.???()
+words = user_input.split()
 
 # Reverse the list and print it
-reversed_words = ???(???(words))
+reversed_words = reversed(words)
 print(reversed_words)
 
 # Print the length of the words list
-print(???(words))
+print(len(words))
 ```
