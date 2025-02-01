@@ -8,12 +8,12 @@ fruits = [
 ]
 
 # We should have some way to track how many we’ve found.
-??? = ???
+count= 0
 
-for ??? in ???:
-   if "d" ??? in ???:
-       print(f"{???} does not have the letter D in its name.")
-       ???
+for fruit in fruits:
+   if "d" not in fruit:
+       print(f"{fruit} does not have the letter D in its name.")
+       count += 1
 
-   if ???:
+   if count==3:
        break
