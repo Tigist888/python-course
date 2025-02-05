@@ -3,21 +3,29 @@
 
 # Basic Function
 # Define a basic function that only prints Hello. Create the definition using def and the call that executes it.
-
+def greeting():
+    print("Hello")
+greeting()
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Basic Function with Parameters
 # Define a basic function that prints a greeting taking a given name.
+def greeting(message):
+    print(message)
 
+greeting("hello")
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Basic Function with Default Values
 # Define a basic function that prints a greeting for a name, but if none is given, use stranger instead of the name,
 # so it behaves like this:
 
-# Prints: Hello, stranger!
-# greeting()
+def greeting(name="stranger"):
+    print(f"Hello, {name}!")
 
+# Example usage:
+greeting()
+greeting("Tom")
 # Prints: Hello, Tom!
 # greeting('Tom')
 
@@ -25,9 +33,15 @@
 
 # Multiple Parameters
 # Define a function that takes two parameters, add them up and prints the sum.
-
 # Prints: The sum of 1 + 2 = 3
 # add(1, 2)
+def add(a, b=0):
+    c= a + b
+    print(f"sum of {a} and {b} = {c}")
+
+
+add(1,2)
+add(1)
 
 # Prints (default values might be useful): The sum of 1 + 0 = 1
 # add(1)
@@ -41,8 +55,15 @@
 
 # Prints: Nelson Mandela
 # full_name("Nelson", "Mandela")
-
+def full_name(first_name=None, last_name=None, name1=None, name2=None):
+    if first_name and last_name:
+        print(f"{first_name} {last_name}")
+    elif name1 and name2:
+        print(f"{name1} {name2}")
+full_name(first_name="Nelson", last_name="Mandela")
+full_name(name1="Mandela", name2="Nelson")
 # Is there anything you can add to the line below, so the function also prints "Nelson Mandela"?
+
 # full_name("Mandela", "Nelson")
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -53,6 +74,19 @@
 # list using a for loop.
 
 # Tip: Validator functions return True / False which we can use in conditionals to do things like print a message.
+
+def validator(word):
+    if len(word) > 8:
+        print("True")
+        return True
+    else:
+        print("False")
+        return False
+
+word_list =  ["elephant", "giraffe", "dolphin", "encyclopedia", "computer", "international", "cat"]
+
+for word in word_list:
+   validator(word)
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -73,6 +107,16 @@
 # - If the number is a multiple of 5, the function should return: Buzz
 # - Otherwise, the function should return the number.
 
+def fizzbuzz(number):
+    if( number % 3 == 0) and (number % 5 == 0):
+        return "FizzBuzz"
+    if number % 3 == 0:
+        return "Fizz"
+    if number % 5 == 0:
+        return "Buzz"
+
+print(fizzbuzz(5))
+
 # Call the function here
 
 # ----------------------------------------------------------------------------------------------------------------------
@@ -91,9 +135,20 @@
 # - Check if the lengths are equal. If they're NOT equal, return False (anagrams are always same length).
 # - Sort both strings. If the sorted versions are equal, they're anagrams!
 
-# Test your function with these strings
+def are_anagrams(str1, str2):
+    if len(str1) == len(str2) and sorted(str1) == sorted(str2):
+        return True
+    else:
+        return False
+
+
+# # Test your function with these strings
 test_str1 = 'abcde'
 test_str2 = 'edcba'
+#
+print(are_anagrams('abcde', 'edcba'))
+print(are_anagrams('hello', 'world'))
+
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -109,6 +164,14 @@ test_str2 = 'edcba'
 # - return result
 
 # Define your function here
+def find_max(numbers):
+    result=numbers[0]
+    for num in numbers:
+        if num > result:
+            result = num
+    return result
+numbers=[1,2,3,4,5,10,20]
+print(find_max(numbers))
 
 # Test the function with a sample list of numbers.
 
@@ -126,5 +189,14 @@ test_str2 = 'edcba'
 # - An odd number leaves a remainder of 1 when divided by 2.
 
 # Define a function is_even_odd(number) here
+def is_even_odd(number):
+    if not isinstance(number, int):  # Check if the number is an integer
+        print("Please provide an integer.")
+        return
+    if number % 2 == 0:
+        print("Even")
+    else:
+        print("Odd")
 
+print(is_even_odd(5))
 # Test the function calling it using a variety of numbers like: 1, 10, 5.5, 9
