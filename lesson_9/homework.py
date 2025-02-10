@@ -6,6 +6,16 @@
 # Create an empty dictionary and then add a few of your friends. Make the key their email (can be fake)
 # and the value their name. When you're done, create the same dictionary as a pre-populated dictionary.
 
+friends={}
+friends["111111@gmail.com"]="lele"
+friends["222222@yahoo.com"]="Jhon"
+
+friends={
+"111111@gmail.com":"lele",
+"222222@yahoo.com":"Jhon"
+}
+
+
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Nested Dictionary
@@ -13,16 +23,45 @@
 # Create a nested dictionary for a list of 5 company employees.
 # The key should be their employee id (an integer from 1-5 will do) and the value should be a dictionary with
 # the name, department and salary of the employee.
-
+employees = {
+    1: {
+        "name": "Alice",
+        "department": "Engineering",
+        "salary": 75000
+    },
+    2: {
+        "name": "Bob",
+        "department": "Marketing",
+        "salary": 55000
+    },
+    3: {
+        "name": "Charlie",
+        "department": "HR",
+        "salary": 60000
+    },
+    4: {
+        "name": "David",
+        "department": "Engineering",
+        "salary": 80000
+    },
+    5: {
+        "name": "Eva",
+        "department": "Sales",
+        "salary": 65000
+    }
+}
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Accessing Values
 
 # Use the previous nested dictionary and write some print statements that will answer the following:
-
 # - Print a list of the employee IDs
+print(list(employees.keys()))
 # - Print the employee data for employee with the ID 3.
+print(employees.items())
 # - Loop over the employees and print all their names and salaries.
+for key, value in employees.items():
+    print(f"{value['name']}, Salary: {value['salary']}")
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -40,12 +79,25 @@ salaries = {
 # We need to increase everyone's salary by 1,000 and also add a new employee joseph with a salary of 18,000.
 # Please come up with a way to do this using update()
 
+salaries_new={
+    'james': 11000,
+    'tom': 16000,
+    'ryan': 17000,
+    'julia': 18000,
+    'joseph':18000
+}
+salaries.update(salaries_new)
+print(salaries)
+
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Deleting Values
 
 # You remember those employees from Updating Values section? Well, Julia got fired, so we need to remove her
 # name from the salaries dictionary. How would you do that?
+
+del salaries['julia']
+
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -66,7 +118,8 @@ films = {
    2019: "Avengers: Endgame",
    2020: "Bad Boys for Life"
 }
-
+for position,(year,value) in enumerate( films.items(),start=1):
+    print(f"{position}, {year},{value}")
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Exercise 1. Animal Shelter Volunteer
@@ -81,26 +134,26 @@ films = {
 
 # Pre-code
 # Initialize the shelter_pets dictionary
-# shelter_pets = {
-#   'Whiskers': {'Age': 2, 'Type': 'Cat', 'Adopted': False},
-#   'Fido': {'Age': 4, 'Type': 'Dog', 'Adopted': True},
-#   'Patch': {'Age': 1, 'Type': 'Dog', 'Adopted': False},
-#   'Snowball': {'Age': 3, 'Type': 'Rabbit', 'Adopted': True}
-# }
+shelter_pets = {
+  'Whiskers': {'Age': 2, 'Type': 'Cat', 'Adopted': False},
+  'Fido': {'Age': 4, 'Type': 'Dog', 'Adopted': True},
+  'Patch': {'Age': 1, 'Type': 'Dog', 'Adopted': False},
+  'Snowball': {'Age': 3, 'Type': 'Rabbit', 'Adopted': True}
+}
 
 # Access and print the age of Whiskers
-# print(shelter_pets['Whiskers']['Age'])  # Should output 2
+print(shelter_pets['Whiskers']['Age'])  # Should output 2
 
 # Access and print if Patch is a dog or cat
-# print(???)
+print(shelter_pets['Patch']['Type'])
 
 # Access and print if Snowball is adopted or not
-# print(???)
+print(shelter_pets['Snowball']['Adopted'])
 
 # Find out which pets are not yet adopted and print their names
-# for ???, ??? in shelter_pets.i???():
-# if not info['???']:
-# print(pet)
+for pet, value in shelter_pets.items():
+    if not value['Adopted']:
+      print(pet)
 
 # ----------------------------------------------------------------------------------------------------------------------
 
@@ -119,31 +172,31 @@ films = {
 # Pre-code:
 # Initialize a dictionary called best_selling_books to store your collection.
 
-# best_selling_books = {
-#   1997: "Harry Potter and the Philosopher's Stone",
-#   1984: "Neuromancer",
-#   2003: "The Kite Runner",
-#   2015: "Go Set a Watchman"
-# }
+best_selling_books = {
+  1997: "Harry Potter and the Philosopher's Stone",
+  1984: "Neuromancer",
+  2003: "The Kite Runner",
+  2015: "Go Set a Watchman"
+}
 
 # The U.S. title for the Harry Potter book published in 1997 is "Harry Potter and the Sorcerer's Stone".
 # Update the title to its U.S. version.
-# best_selling_books ???  = "Harry Potter and the Sorcerer's Stone"
-
+best_selling_books[1997] = "Harry Potter and the Sorcerer's Stone"
 # New sales data reveals that "The Hunt for Red October" was the actual best-seller for 1984
 # and "The Da Vinci Code"  for 2003.
 # Update these in a single operation.
 
-# best_selling_books.u???({
-#   1984: ???
-#   ???: ???
-# ???
+best_selling_books.update({
+      1984:"The hunt for Red October",
+      2003:"The Da Vinci Code"
+ })
+print(best_selling_books)
 
 # The book published in 2015, "Go Set a Watchman," is no longer considered a best-seller.
 # Use the del keyword to remove this entry from the dictionary.
-
+del best_selling_books[2015]
 # Print the updated dictionary of best selling books.
-
+print(best_selling_books)
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Exercise 3. Manage Music Collection
@@ -159,20 +212,25 @@ films = {
 
 # Steps and pre-code
 # Initialize a dictionary to store Bob Dylan's albums
-# dylan_albums = {
-#   1962: "Bob Dylan",
-#   1963: "The Freewheelin' Bob Dylan",
-#   1975: "Blood on the Tracks",
-#   1997: "Time Out of Mind"
-# }
+dylan_albums = {
+  1962: "Bob Dylan",
+  1963: "The Freewheelin' Bob Dylan",
+  1975: "Blood on the Tracks",
+  1997: "Time Out of Mind"
+}
 
 # Use .keys() to loop through and print out all the release years
-# for year in dylan_albums.keys():
-# print(year)
+for year in dylan_albums.keys():
+  print(year)
 
 # Use .values() to loop through and print out all the album names
-
+for value in dylan_albums.values():
+    print(value)
 # Use .items() to loop through and print out both the release year and album name
+for year,value in dylan_albums.items():
+    print(dylan_albums.items())
+print(1997 in dylan_albums.keys() )
+print("Blood on the Tracks" in dylan_albums.values())
 
 # Use the 'in' keyword to check if a particular year or album is in the dictionary (pick any year and any album)
 # Remember the keyword by default checks only the keys, not the values.
@@ -183,14 +241,14 @@ films = {
 
 # Exercise 4. Remove duplicates
 # Remove duplicates from the following dictionary:
-# person = {
-#   'first': 'Jeff',
-#   'name': 'Jeff',
-#   'last': 'Smith',
-#   'last_name': 'Smith',
-#   'state': 'CA',
-#   'age': 55
-# }
+person = {
+  'first': 'Jeff',
+  'name': 'Jeff',
+  'last': 'Smith',
+  'last_name': 'Smith',
+  'state': 'CA',
+  'age': 55
+}
 
 # Steps:
 # - Create a dict person
@@ -198,25 +256,46 @@ films = {
 # - Make a for loop to iterate over person dictionary
 # - If item’s value not in result dict, add key value part into result.
 
+result = {}
+
+
+for key, value in person.items():
+    if value not in result.values():
+        result[key] = value
+
+print(result)
+
 # ----------------------------------------------------------------------------------------------------------------------
 
 # Exercise 5. Find the highest score
 # Create a Python function named find_max_score that takes a dictionary of names and scores as an argument.
 # The function should return the name and score of the person with the highest score in the form of a dictionary.
 
+def find_max_score(scores_dict):
+    result = {}
+    max_score = 0
+    for name, score in scores_dict.items():
+        if score >= max_score:
+            max_score = score
+            result = {name: score}
+
+    return result
 # Sample test_scores dictionary
-# test_scores = {
-#   'James': 83,
-#   'Julia': 91,
-#   'Ryan': 90,
-#   'Maria': 80,
-#   'David': 79,
-#   'Adam': 96,
-#   'Jennifer': 97,
-#   'Susan': 77
-# }
+test_scores = {
+  'James': 83,
+  'Julia': 91,
+  'Ryan': 90,
+  'Maria': 80,
+  'David': 79,
+  'Adam': 96,
+  'Jennifer': 97,
+  'Susan': 77
+}
 
 #  Find the person with the highest test score and display both their name and score
+highest_scorer = find_max_score(test_scores)
+print(highest_scorer)
+
 
 # Steps:
 # - Define a function called find_max_score that takes one argument, scores_dict, which is a dictionary of names
