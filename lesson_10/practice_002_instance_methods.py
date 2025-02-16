@@ -7,3 +7,16 @@
 * Create an instance of the printer, then call each of the instance methods
   to test the messages.
 """
+
+
+class Printer:
+    def notify_low_ink(self):
+        print("Ink is low!")
+
+    def notify_out_of_paper(self):
+        print("Out of paper!")
+
+inkjet_printer = Printer()
+
+inkjet_printer.notify_low_ink()
+inkjet_printer.notify_out_of_paper()
